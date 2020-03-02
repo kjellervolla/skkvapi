@@ -13,7 +13,7 @@ module.exports = app => {
 
 const fetch = require("node-fetch"), Turndown = require("turndown"), turndownService = new Turndown(), { getWeek, getToday, config } = require("../constants.js");
 
-let timeplan = {}, classes = ["10D", "8A", "8B", "8C", "8D", "8E", "9A", "9B", "9C", "9D", "9E", "10A", "10B", "10C", "10D", "10E"];
+let timeplan = {}, classes = ["8A", "8B", "8C", "8D", "8E", "9A", "9B", "9C", "9D", "9E", "10A", "10B", "10C", "10D", "10E"];
 for (let cl of classes) timeplan[cl] = { error: true } // we first make them unavailable until we request them
 
 async function start() {
