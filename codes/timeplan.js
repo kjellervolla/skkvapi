@@ -5,7 +5,7 @@ module.exports = app => {
     const plan = timeplan[request.params.classroom.toUpperCase()];
 
     if (!plan) return response.status(404).json({ error: true, class: false, message: "Dette klasserommet eksisterer ikke." }) // "This classroom does not exist."
-    if (plan.error) return response.status(503).json({ error: true, class: true, message: "Klasserommet er utilgjengelig, prøv igjen senere." }) // "The classroom is unavailable, try again later."
+    if (plan.error) return response.status(503).json({ error: true, class: request.params.classroom.toUpperCase(), message: "Klasserommet er utilgjengelig, prøv igjen senere." }) // "The classroom is unavailable, try again later."
 
     return response.status(200).json(plan)
   })
